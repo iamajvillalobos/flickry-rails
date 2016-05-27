@@ -7,10 +7,12 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'semantic-ui-sass', '~> 2.1', '>= 2.1.8.0'
+gem 'flickraw'
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 group :development do
