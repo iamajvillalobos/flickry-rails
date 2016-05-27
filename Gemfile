@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'semantic-ui-sass', '~> 2.1', '>= 2.1.8.0'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-byebug'
   gem 'spring'
 end
 
