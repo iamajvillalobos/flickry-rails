@@ -26,5 +26,14 @@ body {
   margin-right: 1rem;
 }
 
-.search-form__button {
+// Image Results
+.images_results_list {
+  padding-top: 2rem;
+}
+
+.image-media {
+  img {
+    width: 100%;
+    height: 320px;
+  }
 }

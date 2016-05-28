@@ -18,7 +18,8 @@ class FlickrSearch
   end
 
   def self.find_thumbnail_photo(photo)
-    photo.find { |s| s.label == 'Thumbnail' }.source
+    large_photo = photo.find { |s| s.label == 'Medium' }
+    large_photo ? large_photo.source : "no large photo"
   end
 
   def self.find_large_photo(photo)

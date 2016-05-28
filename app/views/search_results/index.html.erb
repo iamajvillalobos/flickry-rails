@@ -1,10 +1,5 @@
 <div class="ui container">
-  <div class="ui grid">
-    <div class="row">
-      <%= render "search_results/search_form" %>
-    </div>
-    <div class="row">
-      <%= render "search_results/image_results" %>
-    </div>
+  <%= render "search_results/search_form", query: @query %>
+  <%= render "search_results/image_results", search_results: @search_results %>
   </div>
 </div>

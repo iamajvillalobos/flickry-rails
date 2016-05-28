@@ -1,8 +1,7 @@
 <div class="sixteen wide column">
   <div class="search-form"
-    <%= form_for @query, url: { action: "index" }, method: "get" do %>
+    <%= form_for query, url: { action: "index" }, method: "get" do %>
       <h2 class="search-form__title">Search from millions of photos in Flickr</h2>
-
       <div class="search-form__container">
         <div class="ui input search-form__input">
           <%= text_field_tag :query %>

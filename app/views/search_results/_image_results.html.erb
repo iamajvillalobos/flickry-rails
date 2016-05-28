@@ -1,7 +1,9 @@
-<div class="sixteen wide column">
-  <div class="images_results_list">
-    <%= @search_results.each do |image| %>
-      <%= render "search_results/image_media", locals: { image: image } %>
+<div class="images_results_list">
+  <div class="ui stackable grid">
+    <% search_results.each do |image| %>
+      <div class="four wide column">
+        <%= render "search_results/image_media", image: image %>
+      </div>
     <% end %>
   </div>
 </div>
