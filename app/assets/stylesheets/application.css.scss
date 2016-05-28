@@ -4,11 +4,27 @@ body {
   padding-top: 60px;
 }
 
-.text-logo {
+// Navigation
+
+.logo {
   font-size: 1.5rem;
 }
 
-.image-search {
-  width: 100%;
-  display: inline-block;
+// Search Form
+.search-form__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form__title {
+  text-align: center;
+}
+
+.search-form__input {
+  width: 50%;
+  margin-right: 1rem;
+}
+
+.search-form__button {
 }
