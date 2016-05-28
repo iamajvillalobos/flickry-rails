@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'pages#index'
-  get 'pages/index'
-
+  root to: 'search_results#index'
   resources :search_results
 end
