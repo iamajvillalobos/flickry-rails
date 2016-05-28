@@ -1,7 +1,7 @@
 class SearchResultsController < ApplicationController
   def index
-    if params[:search_query]
-      @query = SearchResult.new(query: params[:search_query])
+    if params[:query]
+      @query = SearchResult.new(query: params[:query])
       if @query.save
         @search_results = FlickrSearch.search_for_photos(@query)
       else
