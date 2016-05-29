@@ -1,29 +1,28 @@
 class FlickrSearch
+  NO_IMAGE_FOUND = "http://placehold.it/500x375?text=No+Image+Found"
+
   def self.search_for_photos(search_result)
     results = []
     images = flickr.photos.search(text: search_result.query, per_page: 25)
     images.each do |image|
-      details = get_photo_details(image)
-      results << get_photo_images(details)
+      thumbnail_photo = get_thumbnail_photo(image)
+      link_url = get_link_url(image)
+      results << {
+        thumbnail_photo: thumbnail_photo,
+        link_url: link_url
+      }
     end
     results
   end
 
-  def self.get_photo_details(image)
-    flickr.photos.getSizes(photo_id: image.id)
+  def self.get_thumbnail_photo(photo)
+    result = flickr.photos.getSizes(photo_id: photo.id)
+    image = result.find { |s| s.label == 'Medium' }
+    image ? image.source : no_image_found
   end
 
-  def self.get_photo_images(image)
-    [find_thumbnail_photo(image), find_large_photo(image)]
-  end
-
-  def self.find_thumbnail_photo(photo)
-    large_photo = photo.find { |s| s.label == 'Medium' }
-    large_photo ? large_photo.source : "no large photo"
-  end
-
-  def self.find_large_photo(photo)
-    large_photo = photo.find { |s| s.label == 'Original' || s.label == 'Large' }
-    large_photo ? large_photo.source : "no large photo"
+  def self.get_link_url(image)
+    info = flickr.photos.getInfo(photo_id: image.id)
+    info.urls.first["_content"]
   end
 end
