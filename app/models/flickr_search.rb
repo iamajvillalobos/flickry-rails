@@ -3,7 +3,7 @@ class FlickrSearch
 
   def self.search_for_photos(search_result)
     results = []
-    images = flickr.photos.search(text: search_result.query, per_page: 25)
+    images = flickr.photos.search(text: search_result.query)
     images.each do |image|
       thumbnail_photo = get_thumbnail_photo(image)
       link_url = get_link_url(image)
